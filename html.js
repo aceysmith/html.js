@@ -34,11 +34,11 @@ function H(elementType, attributesOrBody, maybeBody){
   elementType = elementType ? elementType : 'div';
   var attributesArray = [];
   var selfClosingTag = ['br','hr','input','img','link','meta'].indexOf(elementType) > -1;
-  if(selfClosingTag || (typeof attributesOrBody == 'object'))
+  if(selfClosingTag || (attributesOrBody.constructor == Object && typeof maybeBody == 'undefined'))
     maybeBody = '';
   var attributes = (typeof maybeBody == 'undefined') ? {} : (attributesOrBody ? attributesOrBody : {});
   var body = (typeof maybeBody == 'undefined') ? (attributesOrBody ? attributesOrBody : []) : (maybeBody ? maybeBody : []);
-  body = (typeof body == 'string') ? [body] : (typeof body != 'object' ? [] : body);
+  body = (typeof body == 'string') ? [body] : (body.constructor == Array ? body : []);
   for(z in attributes)
     attributesArray.push(" " + z + '="' + attributes[z] + '"');
   return '<' + elementType + attributesArray.join('') + (selfClosingTag ? ' />' : '>') + body.join('') + (selfClosingTag ? '' : '</' + elementType + '>');

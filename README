@@ -1,4 +1,4 @@
-Do fast HTML creation with JS, Ready... GO!
+Do fast HTML creation in JavaScript. Ready... GO!
 
 
 Examples:
@@ -9,11 +9,14 @@ DIV()
 DIV("HEY")
 <div>HEY</div>
 
-DIV(["HEY",DIV()])
-<div>HEY<div></div></div>
-
 DIV({"id":"thing"})
 <div id="thing"></div>
+
+DIV(H1("HEY"))
+<div><h1>HEY</h1></div>
+
+DIV(["HEY",DIV()])
+<div>HEY<div></div></div>
 
 DIV({"id":"thing"},["HEY"])
 <div id="thing">HEY</div>
@@ -32,7 +35,7 @@ HTML([
       P("Example website")
     ]),
     BR(),
-    DIV({"style":"clear:both;display:block;"},"")
+    DIV({"style":"clear:both;display:block;"})
   ])
 ])
 <html>
