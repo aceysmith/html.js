@@ -1,1 +1,49 @@
-Do fast HTML creation with JS, GO
+Do fast HTML creation with JS, Ready... GO!
+
+
+Examples:
+
+DIV()
+<div></div>
+
+DIV("HEY")
+<div>HEY</div>
+
+DIV(["HEY",DIV()])
+<div>HEY<div></div></div>
+
+DIV({"id":"thing"})
+<div id="thing"></div>
+
+DIV({"id":"thing"},["HEY"])
+<div id="thing">HEY</div>
+
+BR()
+<br />
+
+BR({"id":"thing"})
+<br id="thing" />
+
+HTML([
+  HEAD(),
+  BODY([
+    DIV({"id":"mainDiv"},[
+      H1("HOWDY"),
+      P("Example website")
+    ]),
+    BR(),
+    DIV({"style":"clear:both;display:block;"},"")
+  ])
+])
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="mainDiv">
+      <h1>HOWDY</h1>
+      <p>Example website</p>
+    </div>
+    <br />
+    <div style="clear:both;display:block;"></div>
+  </body>
+</html>
