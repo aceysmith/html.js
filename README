@@ -27,13 +27,14 @@ BR()
 BR({"id":"thing"})
 <br id="thing" />
 
-HTML([
+HTML(
   HEAD(),
-  BODY([
-    DIV({"id":"mainDiv"},[
+  BODY(
+    DIV(
+      {"id":"mainDiv"},
       H1("HOWDY"),
       P("Example website")
-    ]),
+    ),
     BR(),
     DIV({"style":"clear:both;display:block;"})
   ])
